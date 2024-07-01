@@ -24,10 +24,10 @@ module FSM #(
         DATA,
         PARITY,
         STOP
-    } state_;
+    } state_e ;
     
     //internal signals
-     reg [2:0] current_state, next_state;
+    state_e [2:0] current_state, next_state;
 
     
     // state trasition
