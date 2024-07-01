@@ -33,7 +33,7 @@ module FSM #(
     // state trasition
     always @( posedge clk or negedge reset ) begin
         if (!reset) begin
-            current_state <= 0;
+            current_state <= IDLE;
         end
         else begin
             current_state <= next_state;
