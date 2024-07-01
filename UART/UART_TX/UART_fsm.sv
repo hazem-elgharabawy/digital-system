@@ -17,6 +17,7 @@ module FSM #(
     localparam PARITY = 3;
     localparam STOP = 4;*/
 
+    
 
     typedef enum  {
         IDLE,
@@ -29,7 +30,8 @@ module FSM #(
     //internal signals
     state_e current_state, next_state;
 
-    
+    reg busy_c;
+
     // state trasition
     always @( posedge clk or negedge reset ) begin
         if (!reset) begin
@@ -87,40 +89,53 @@ module FSM #(
 
     //OUTPUT LOGIC
     always @(*) begin
+ 
         case (current_state)
             IDLE : begin
               ser_en = 0;
               mux_sel = 0; 
-              busy = 0; 
+              busy_c = 0; 
             end 
             START : begin
                 ser_en = 1;
                 mux_sel = 1;
-                busy = 1;
+                busy_c = 1;
             end
             DATA : begin
                 ser_en = 1;
                 mux_sel = 2;
-                busy = 1;
+                busy_c = 1;
             end
             PARITY : begin
                 ser_en = 0;
                 mux_sel = 3;
-                busy = 1;
+                busy_c = 1;
             end
             STOP : begin
                 ser_en = 0;
                 mux_sel = 0;
-                busy = 1; 
+                busy_c = 1; 
             end
             default:begin
                 ser_en = 0 ;
                 mux_sel = 0;
-                busy = 0;
+                busy_c = 0;
             end  
         endcase
     end
     
+    //register output 
+    always @ (posedge clk or negedge reset)
+    begin
+    if(!reset)
+    begin
+        busy <= 1'b0 ;
+    end
+    else
+    begin
+        busy <= busy_c ;
+    end
+    end
     
    
 

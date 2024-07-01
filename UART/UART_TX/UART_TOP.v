@@ -27,11 +27,9 @@ module UART_TX_TOP #(
     parity_calc parity (.*);
     FSM fsm (.*);
     
-    mux mux (
-        .IN0(stop_bit),
-        .IN1(start_bit),
-        .IN3(ser_data),
-        .IN4(par_bit),
+    MUX mux (
+        .IN0(ser_data),
+        .IN1(par_bit),
         .mux_sel(mux_sel),
         .TX_OUT(TX_OUT)
         );

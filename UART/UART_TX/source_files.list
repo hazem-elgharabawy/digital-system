@@ -1,3 +1,4 @@
+mux.v
 UART_fsm.sv
 UART_parity_calc.v
 UART_serializer.v
