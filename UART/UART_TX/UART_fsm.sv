@@ -27,7 +27,7 @@ module FSM #(
     } state_e ;
     
     //internal signals
-    state_e [2:0] current_state, next_state;
+    state_e current_state, next_state;
 
     
     // state trasition
