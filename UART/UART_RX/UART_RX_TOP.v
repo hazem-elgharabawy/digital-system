@@ -5,7 +5,7 @@ module TOP (
     input           PAR_EN,
     input           Prescale,
     input           RX_IN,
-    output [10:0]   P_DATA,
+    output [7:0]    P_DATA,
     output          data_valid
 );
     
