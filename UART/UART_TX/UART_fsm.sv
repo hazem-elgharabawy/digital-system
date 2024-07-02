@@ -10,14 +10,7 @@ module FSM #(
     output reg busy,
     output reg [1:0] mux_sel
 );
-    /*//parameters
-    localparam IDLE = 0;
-    localparam START = 1;
-    localparam DATA = 2;
-    localparam PARITY = 3;
-    localparam STOP = 4;*/
-
-    
+     
 
     typedef enum  {
         IDLE,
