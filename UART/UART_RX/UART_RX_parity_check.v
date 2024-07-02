@@ -14,7 +14,7 @@ module parity_check (
         if(!rst)begin
             par_err <= 0;
         end
-            par_err = par_err_c
+            par_err = par_err_c;
         end
 
 
