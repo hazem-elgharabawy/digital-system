@@ -6,7 +6,7 @@ module deserializer (
     output [7:0]    P_DATA
 );
 
-    reg [7:0]data;
+    reg [7:0] data;
     always @(posedge clk) begin
         if (!rst) begin
             data <= 0; 
