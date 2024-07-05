@@ -10,35 +10,31 @@ module parity_check (
     reg calculated_par;
     reg par_err_c;
 
-    always @(posedge clk ) begin
-        if(!rst)begin
-            par_err <= 0;
-        end
-            par_err = par_err_c;
-        end
-
-
+    
     always @(*) begin
-        par_err_c  = 0;
+        
         if (parity_check_en) begin
                 if (PAR_TYP) begin
                     calculated_par = ~^P_data;
                     if (sampled_bit == calculated_par) begin
-                        par_err_c = 0;
+                        par_err = 0;
                     end
                     else begin
-                        par_err_c = 1;
+                        par_err = 1;
                     end
                 end
                 else begin
                     calculated_par = ^P_data;
                     if (sampled_bit == calculated_par) begin
-                        par_err_c = 0;
+                        par_err = 0;
                     end
                     else begin
-                        par_err_c = 1;
+                        par_err = 1;
                     end
                 end    
+        end
+        else begin
+            par_err = 0;
         end
     end
     
