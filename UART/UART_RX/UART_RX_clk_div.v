@@ -3,14 +3,14 @@ module CLK_DIV (
     input rst,
     output clk_16,
     output clk_8,
-    output clk);
+    output clk_1);
     
     reg [4:0] counter
 
 
     assign clk_16 = counter[1];
     assign clk_8 = counter[2];
-    assign clk = counter[4];
+    assign clk_1 = counter[4];
     
     always @(posedge clk_32 ) begin
         if (!rst) begin

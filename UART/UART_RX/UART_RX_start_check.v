@@ -1,6 +1,4 @@
 module start_check (
-    input       clk,
-    input       rst,
     input       start_check_en,
     input       sampled_bit,
     output reg  start_glitch );

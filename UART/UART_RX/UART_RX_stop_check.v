@@ -1,6 +1,4 @@
 module stop_check (
-    input       clk,
-    input       rst,
     input       stop_check_en,
     input       sampled_bit,
     output reg  stop_err );

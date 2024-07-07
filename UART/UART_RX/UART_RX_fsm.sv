@@ -6,7 +6,7 @@ module FSM (
     input [4:0] Prescale,
     input edge_count,
     input bit_count,
-    input stop_error
+    input stop_error,
     input start_glitch,
     input par_error,
     output data_sample_en,
