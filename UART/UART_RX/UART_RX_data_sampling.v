@@ -1,9 +1,96 @@
 module data_sampling (
+    input clk_8,
+    input clk_16,
+    input clk_32,
+    input rst,
     input RX_IN,
     input Prescale,
     input data_sample_en,
     input edge_count,
     output sampled_bit,
 );
+    reg [2:0] sampled_ones_32;
+    reg [2:0] sampled_ones_16;
+    reg [1:0] sampled_ones_8;
+
+    always @(*) begin
+        if (Prescale ==32)begin
+            if (sampled_ones_32==4 || sampled_ones_32==5 || sampled_ones_32==6 || sampled_ones_32==7) begin
+                sampled_bit = 1
+            end
+            else begin
+                sampled_bit = 0;
+            end
+        end
+        else if (Prescale ==16)begin
+            if (sampled_ones_16==3 || sampled_ones_16==4 || sampled_ones_16==5) begin
+                sampled_bit = 1
+            end
+            else begin
+                sampled_bit = 0;
+            end
+        end
+        else if (Prescale ==8)begin
+            if (sampled_ones_8 == 2 || sampled_ones_8 == 3) begin
+                sampled_bit = 1
+            end
+            else begin
+                sampled_bit = 0;
+            end
+        end
+    end
     
+    //prescale = 32
+    always @(posedge clk_32) begin
+        if (!rst) begin
+            sampled_ones_32 <= 0;
+        end
+        else if (data_sample_en && Prescale == 32) begin
+            if (edge_count==31) begin
+                sampled_ones_32 <= 0;
+            end
+            else if (edge_count==13||edge_count==14||edge_count==15||edge_count==16||edge_count==17||edge_count==18||edge_count==19) begin
+                sampled_ones_32 <= sampled_ones_32 + RX_IN;
+            end
+        end
+        else begin
+            sampled_ones_32 <= 0;
+        end
+    end
+
+    // prescale = 16
+    always @(posedge clk_16) begin
+        if (!rst) begin
+            sampled_ones_16 <= 0;
+        end
+        else if (counter_enable && Prescale == 16) begin
+            if (edge_count == 15) begin
+                sampled_ones_16 <= 0;
+            end
+            else if (edge_count==6||edge_count==7||edge_count==8||edge_count==9||edge_count==10) begin
+                sampled_ones_16 <= sampled_ones_16 + RX_IN;
+            end
+        end
+        else begin
+            sampled_ones_16 <= 0;
+        end        
+    end
+    
+    // prescale = 8
+    always @(posedge clk_8) begin
+        if (!rst) begin
+            sampled_ones_8 <= 0;
+        end
+        else if (counter_enable && Prescale == 8) begin
+            if (edge_count == 7) begin
+                sampled_ones_8 <= 0;
+            end
+            else if (edge_count==3||edge_count==4||edge_count==5) begin
+                sampled_ones_8 <= sampled_ones_8 + RX_IN;
+            end
+        end
+        else begin
+            sampled_ones_8 <= 0;
+        end        
+    end    
 endmodule
