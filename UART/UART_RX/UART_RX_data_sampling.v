@@ -9,13 +9,13 @@ module data_sampling (
     input edge_count,
     output sampled_bit,
 );
-    reg [2:0] sampled_ones_32;
-    reg [2:0] sampled_ones_16;
+    reg [1:0] sampled_ones_32;
+    reg [1:0] sampled_ones_16;
     reg [1:0] sampled_ones_8;
 
     always @(*) begin
         if (Prescale ==32)begin
-            if (sampled_ones_32==4 || sampled_ones_32==5 || sampled_ones_32==6 || sampled_ones_32==7) begin
+            if (sampled_ones_32==2 || sampled_ones_32==3 ) begin
                 sampled_bit = 1
             end
             else begin
@@ -23,7 +23,7 @@ module data_sampling (
             end
         end
         else if (Prescale ==16)begin
-            if (sampled_ones_16==3 || sampled_ones_16==4 || sampled_ones_16==5) begin
+            if (sampled_ones_16==2 || sampled_ones_16==3) begin
                 sampled_bit = 1
             end
             else begin
@@ -46,10 +46,10 @@ module data_sampling (
             sampled_ones_32 <= 0;
         end
         else if (data_sample_en && Prescale == 32) begin
-            if (edge_count==31) begin
+            if (edge_count== 31) begin
                 sampled_ones_32 <= 0;
             end
-            else if (edge_count==13||edge_count==14||edge_count==15||edge_count==16||edge_count==17||edge_count==18||edge_count==19) begin
+            else if (edge_count==15||edge_count==16||edge_count==17) begin
                 sampled_ones_32 <= sampled_ones_32 + RX_IN;
             end
         end
@@ -67,7 +67,7 @@ module data_sampling (
             if (edge_count == 15) begin
                 sampled_ones_16 <= 0;
             end
-            else if (edge_count==6||edge_count==7||edge_count==8||edge_count==9||edge_count==10) begin
+            else if (edge_count==7||edge_count==8||edge_count==9) begin
                 sampled_ones_16 <= sampled_ones_16 + RX_IN;
             end
         end
