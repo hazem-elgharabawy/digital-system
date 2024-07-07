@@ -49,11 +49,11 @@ module edge_bit_counter (
             else begin
                 edge_count_16 <= edge_count_16 + 1;
             end
+        end
         else begin
             bit_count_16 <= 0;
             edge_count_16 <= 0;
-        end
-        end        
+        end      
     end       
 
     // prescale = 8
@@ -70,11 +70,11 @@ module edge_bit_counter (
             else begin
                 edge_count_8 <= edge_count_8 + 1;
             end
+        end
         else begin
             bit_count_8 <= 0;
             edge_count_8 <= 0;
-        end
-        end        
+        end       
     end
 
     // prescale = 32
@@ -91,11 +91,11 @@ module edge_bit_counter (
             else begin
                 edge_count_32 <= edge_count_32 + 1;
             end
+        end
         else begin
             bit_count_32 <= 0;
             edge_count_32 <= 0;
-        end
-        end        
+        end      
     end
 
 endmodule

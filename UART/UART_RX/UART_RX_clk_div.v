@@ -5,7 +5,7 @@ module CLK_DIV (
     output clk_8,
     output clk_1);
     
-    reg [4:0] counter
+    reg [4:0] counter;
 
 
     assign clk_16 = counter[1];
@@ -16,7 +16,7 @@ module CLK_DIV (
         if (!rst) begin
             counter<=0;
         end
-        else if (counter == 5'b111111)begin
+        else if (counter == 5'b11111)begin
             counter<=0;
         end
         else begin

@@ -9,13 +9,13 @@ module FSM (
     input stop_error,
     input start_glitch,
     input par_error,
-    output data_sample_en,
-    output counter_enable,
-    output deser_en,
-    output data_valid,
-    output stop_check_en,
-    output start_check_en,
-    output par_check_en
+    output reg data_sample_en,
+    output reg counter_enable,
+    output reg deser_en,
+    output reg data_valid,
+    output reg stop_check_en,
+    output reg start_check_en,
+    output reg par_check_en
 );
     
     //states def

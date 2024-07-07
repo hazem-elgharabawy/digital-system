@@ -35,3 +35,11 @@ UART/UART_TX/work/@_opt/_lib6_0.qpg
 UART/UART_TX/work/@_opt/_lib6_0.qtl
 UART/UART_TX/work/@_opt/_data/exemptfnn22j
 UART/UART_TX/UART_TX.cr.mti
+UART/UART_RX/UART_RX.mpf
+UART/UART_RX/work/_info
+UART/UART_RX/work/_lib.qdb
+UART/UART_RX/work/_lib1_0.qdb
+UART/UART_RX/work/_lib1_0.qpg
+UART/UART_RX/work/_lib1_0.qtl
+UART/UART_RX/work/_vmake
+UART/UART_RX/work/@_opt/_lib.qdb

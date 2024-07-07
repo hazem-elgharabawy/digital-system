@@ -28,19 +28,19 @@ module TOP (
         );
 
     data_sampling sampler (
-        clk_8(clk_8),
-        clk_16(clk_16),
-        clk_32(clk),
-        rst(rst),
-        RX_IN(RX_IN),
-        Prescale(Prescale),
-        data_sample_en(data_sample_en),
-        edge_count(edge_count),
-        sampled_bit(sampled_bit)
+        .clk_8(clk_8),
+        .clk_16(clk_16),
+        .clk_32(clk),
+        .rst(rst),
+        .RX_IN(RX_IN),
+        .Prescale(Prescale),
+        .data_sample_en(data_sample_en),
+        .edge_count(edge_count),
+        .sampled_bit(sampled_bit)
     );
 
-    FSM fsm (
-        .clk(.clk_1),
+    FSM fsm(
+        .clk(clk_1),
         .rst(rst),
         .PAR_EN(PAR_EN),
         .RX_IN(RX_IN),
@@ -72,8 +72,8 @@ module TOP (
 
     // check deserializer clock
     deserializer deserializer (
-        .clk
-        .rst,
+        .clk(clk_1),
+        .rst(rst),
         .sampled_bit(sampled_bit),
         .deser_en(deser_en),
         .P_DATA(P_DATA)
