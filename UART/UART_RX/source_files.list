@@ -1,4 +1,3 @@
-UART_RX_clk_div.v
 UART_RX_fsm.sv
 UART_RX_data_sampling.v
 UART_RX_deserializer.v
