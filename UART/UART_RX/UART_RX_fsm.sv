@@ -51,7 +51,7 @@ module FSM (
                 end
             end
             START : begin
-                if (bit_count == 1) begin
+                if (edge_count == (Prescale -1)) begin
                     if (start_glitch) begin
                         next_state = IDLE;
                     end
@@ -64,7 +64,7 @@ module FSM (
                 end                
             end
             DATA : begin
-                if (edge_count == (Prescale/2)+2) begin
+                if (edge_count == (Prescale -1) ) begin
                     if (bit_count == 9) begin
                         if (PAR_EN) begin
                             next_state = PARITY;    
@@ -82,7 +82,7 @@ module FSM (
                 end
             end
             PARITY : begin
-                if (edge_count == (Prescale/2)+2) begin
+                if (edge_count == (Prescale -1)) begin
                     if(par_error ==1) begin
                         next_state = IDLE;
                     end
@@ -95,7 +95,7 @@ module FSM (
                 end
             end
             STOP : begin
-                if (edge_count == (Prescale/2)+2) begin
+                if (edge_count == (Prescale -1)) begin
                     if (stop_error) begin
                         next_state= IDLE;
                     end
@@ -161,10 +161,10 @@ module FSM (
             STOP : begin 
                 if (edge_count >= ((Prescale/2)+2))begin
                     if (stop_error) begin
+                        data_valid = 0;
                         data_sample_en = 0;
                         counter_enable = 0;
                         deser_en = 0;
-                        data_valid = 0;
                         stop_check_en = 1;
                         start_check_en = 0;
                         par_check_en = 0;
@@ -181,10 +181,10 @@ module FSM (
                     end
                 end
                 else begin
+                    data_valid = 0;
                     data_sample_en = 1;
                     counter_enable = 1;
                     deser_en = 0;
-                    data_valid = 0;
                     stop_check_en = 1;
                     start_check_en = 0;
                     par_check_en = 0;

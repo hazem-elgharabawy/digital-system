@@ -9,28 +9,14 @@ module TOP (
     output          data_valid
 );
     
-    wire clk_32, clk_16, clk_1;
-    
-    
     wire data_sample_en, counter_enable, deser_en, stop_check_en, start_check_en, par_check_en;  
 
     wire stop_error, par_error, start_glitch;
 
     wire edge_count, bit_count, sampled_bit;
 
-
-    CLK_DIV clk_div (
-        .clk_32(clk),
-        .rst(rst),
-        .clk_16(clk_16),
-        .clk_8(clk_8),
-        .clk_1(clk_1)
-        );
-
     data_sampling sampler (
-        .clk_8(clk_8),
-        .clk_16(clk_16),
-        .clk_32(clk),
+        .clk(clk),
         .rst(rst),
         .RX_IN(RX_IN),
         .Prescale(Prescale),
@@ -40,7 +26,7 @@ module TOP (
     );
 
     FSM fsm(
-        .clk(clk_1),
+        .clk(clk),
         .rst(rst),
         .PAR_EN(PAR_EN),
         .RX_IN(RX_IN),
@@ -60,9 +46,7 @@ module TOP (
     );
 
     edge_bit_counter edge_bit_counter(
-        .clk_16(clk_16),
-        .clk_8(clk_8),
-        .clk_32(clk),
+        .clk(clk),
         .rst(rst),
         .Prescale(Prescale),
         .counter_enable(counter_enable),
@@ -72,20 +56,27 @@ module TOP (
 
     // check deserializer clock
     deserializer deserializer (
-        .clk(clk_1),
+        .clk(clk),
         .rst(rst),
         .sampled_bit(sampled_bit),
         .deser_en(deser_en),
+        .edge_count(edge_count),
         .P_DATA(P_DATA)
     );
 
     start_check start_check (
+        .clk(clk),
+        .rst(rst),
+        .edge_count(edge_count),
         .start_check_en(start_check_en),
         .sampled_bit(sampled_bit),
         .start_glitch(start_glitch) 
     );
 
     stop_check stop_check (
+        .clk(clk),
+        .rst(rst),
+        .edge_count(edge_count),
         .stop_check_en(stop_check_en),
         .sampled_bit(sampled_bit),
         .stop_err(stop_err)
@@ -93,6 +84,9 @@ module TOP (
 
     // P_DATA as an input???????
     parity_check parity_check (
+        .clk(clk),
+        .rst(rst),
+        .edge_count(edge_count),
         .PAR_TYP(PAR_TYP),
         .parity_check_en(parity_check_en),
         .sampled_bit(sampled_bit),
@@ -100,12 +94,4 @@ module TOP (
         .par_err(par_err) 
     );
 
-
-
-
-
-
-
-
-    
 endmodule

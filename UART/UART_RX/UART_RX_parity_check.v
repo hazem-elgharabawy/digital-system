@@ -5,34 +5,21 @@ module parity_check (
     input  [7:0]    P_data,
     output reg      par_err );
 
-    reg calculated_par;
-    reg par_err_c;
+    wire calculated_par;
 
-    
-    always @(*) begin
-        
-        if (parity_check_en) begin
-                if (PAR_TYP) begin
-                    calculated_par = ~^P_data;
-                    if (sampled_bit == calculated_par) begin
-                        par_err = 0;
-                    end
-                    else begin
-                        par_err = 1;
-                    end
+    assign calculated_par = (PAR_TYP)? ~^P_data: ^P_data;
+
+    always @(posedge clk) begin
+        if (!rst) begin
+            par_err <= 0;
+        end
+        else if (parity_check_en && edge_count == ((Prescale/2)+2)) begin
+                if (sampled_bit == calculated_par)begin
+                    par_err <= 0;
                 end
                 else begin
-                    calculated_par = ^P_data;
-                    if (sampled_bit == calculated_par) begin
-                        par_err = 0;
-                    end
-                    else begin
-                        par_err = 1;
-                    end
-                end    
-        end
-        else begin
-            par_err = 0;
+                    par_err <= 1; 
+                end
         end
     end
     

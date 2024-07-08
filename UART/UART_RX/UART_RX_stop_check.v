@@ -5,17 +5,17 @@ module stop_check (
 
 
     
-    always @(*) begin
-        if (stop_check_en) begin
+    always @(posedge clk) begin
+        if (!rst) begin
+            stop_err <= 0;
+        end
+        else if (stop_check_en && edge_count == ((Prescale/2)+2)) begin
             if (sampled_bit) begin
-                stop_err = 0;
+                stop_err <= 0;
             end
             else begin
-                stop_err = 1;
+                stop_err <= 1;
             end
-        end
-        else begin
-            stop_err = 0;
         end
     end
 endmodule

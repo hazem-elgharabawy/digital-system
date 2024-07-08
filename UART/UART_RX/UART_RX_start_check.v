@@ -3,17 +3,17 @@ module start_check (
     input       sampled_bit,
     output reg  start_glitch );
 
-    always @(*) begin
-        if (start_check_en) begin
+    always @(posedge clk) begin
+        if (!rst) begin
+            start_glitch <= 0;
+        end
+        else if (start_check_en && edge_count == ((Prescale/2)+2)) begin
             if (sampled_bit) begin
-                start_glitch = 1;
+                start_glitch <= 1;
             end
             else begin
-                start_glitch = 0;
+                start_glitch <= 0;
             end
-        end
-        else begin
-            start_glitch = 0;
         end
     end
 endmodule

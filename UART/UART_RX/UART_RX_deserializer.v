@@ -3,6 +3,7 @@ module deserializer (
     input           rst,
     input           sampled_bit,
     input           deser_en,
+    input  [4:0]    edge_count,
     output [7:0]    P_DATA
 );
 
@@ -13,7 +14,9 @@ module deserializer (
         end
         else begin
             if (deser_en) begin
-                data <= {data,sampled_bit};
+                if (edge_count == ((Prescale/2)+2)) begin
+                    data <= {data,sampled_bit};
+                end   
             end 
         end     
     end
