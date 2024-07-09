@@ -36,6 +36,8 @@ module UART_RX_tb ();
         //check_out(8'hff);
         //send_packet_with_odd_parity(8'ha8, 8);
         //check_out(8'ha8);
+        report();
+        $stop;
     end
 
 
