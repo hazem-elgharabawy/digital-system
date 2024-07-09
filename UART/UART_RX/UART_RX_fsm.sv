@@ -3,7 +3,7 @@ module FSM (
     input rst,
     input PAR_EN,
     input RX_IN,
-    input [4:0] Prescale,
+    input [5:0] Prescale,
     input edge_count,
     input bit_count,
     input stop_error,

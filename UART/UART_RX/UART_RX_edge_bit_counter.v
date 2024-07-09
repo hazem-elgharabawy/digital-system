@@ -1,7 +1,7 @@
 module edge_bit_counter (
     input               clk,
     input               rst,
-    input               Prescale,
+    input      [5:0]    Prescale,
     input               counter_enable,
     output reg [4:0]    edge_count,
     output reg [3:0]    bit_count);

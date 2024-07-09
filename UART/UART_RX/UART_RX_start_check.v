@@ -1,7 +1,9 @@
 module start_check (
     input       start_check_en,
     input       sampled_bit,
-    output reg  start_glitch );
+    input [4:0] edge_count,
+    input [5:0] Prescale,
+    output reg  start_glitch);
 
     always @(posedge clk) begin
         if (!rst) begin

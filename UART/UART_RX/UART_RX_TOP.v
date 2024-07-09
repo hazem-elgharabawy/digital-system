@@ -3,7 +3,7 @@ module TOP (
     input           rst,
     input           PAR_TYP,
     input           PAR_EN,
-    input           Prescale,
+    input  [5:0]    Prescale,
     input           RX_IN,
     output [7:0]    P_DATA,
     output          data_valid

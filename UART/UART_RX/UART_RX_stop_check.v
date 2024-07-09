@@ -1,7 +1,9 @@
 module stop_check (
-    input       stop_check_en,
-    input       sampled_bit,
-    output reg  stop_err );
+    input           stop_check_en,
+    input           sampled_bit,
+    input [4:0]     edge_count,
+    input [5:0]     Prescale,
+    output reg      stop_err );
 
 
     

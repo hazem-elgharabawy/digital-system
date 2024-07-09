@@ -1,11 +1,11 @@
 module data_sampling (
-    input clk,
-    input rst,
-    input RX_IN,
-    input Prescale,
-    input data_sample_en,
-    input edge_count,
-    output reg sampled_bit
+    input       clk,
+    input       rst,
+    input       RX_IN,
+    input [5:0] Prescale,
+    input       data_sample_en,
+    input [4:0] edge_count,
+    output reg  sampled_bit
 );
     
     reg [1:0] sampled_ones;
