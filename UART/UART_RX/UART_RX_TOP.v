@@ -60,6 +60,7 @@ module TOP (
         .rst(rst),
         .sampled_bit(sampled_bit),
         .deser_en(deser_en),
+        .Prescale(Prescale),
         .edge_count(edge_count),
         .P_DATA(P_DATA)
     );
@@ -67,6 +68,7 @@ module TOP (
     start_check start_check (
         .clk(clk),
         .rst(rst),
+        .Prescale(Prescale),
         .edge_count(edge_count),
         .start_check_en(start_check_en),
         .sampled_bit(sampled_bit),
@@ -76,6 +78,7 @@ module TOP (
     stop_check stop_check (
         .clk(clk),
         .rst(rst),
+        .Prescale(Prescale),
         .edge_count(edge_count),
         .stop_check_en(stop_check_en),
         .sampled_bit(sampled_bit),
@@ -86,6 +89,7 @@ module TOP (
     parity_check parity_check (
         .clk(clk),
         .rst(rst),
+        .Prescale(Prescale),
         .edge_count(edge_count),
         .PAR_TYP(PAR_TYP),
         .parity_check_en(parity_check_en),
