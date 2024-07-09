@@ -13,7 +13,9 @@ module TOP (
 
     wire stop_error, par_error, start_glitch;
 
-    wire edge_count, bit_count, sampled_bit;
+    wire [4:0]edge_count;
+    wire [3:0] bit_count;
+    wire sampled_bit;
 
     data_sampling sampler (
         .clk(clk),

@@ -30,8 +30,8 @@ module UART_RX_tb ();
     initial begin
         init();
         check_rst();
-        //send_packet_without_parity(8'h45, 8);
-        //check_out(8'h45);
+        send_packet_without_parity(8'h45, 8);
+        check_out(8'h45);
         //send_packet_with_even_parity(8'hff, 8);
         //check_out(8'hff);
         //send_packet_with_odd_parity(8'ha8, 8);
@@ -72,8 +72,8 @@ module UART_RX_tb ();
     begin
         integer i ;
         @(negedge clk);
-        PAR_TYP=0;
-        PAR_EN=0;
+        PAR_TYP = 0;
+        PAR_EN = 0;
         Prescale = Prescale_in;
         RX_IN = 0; // start bit
         repeat (Prescale) @(negedge clk);
