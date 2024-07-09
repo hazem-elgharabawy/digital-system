@@ -11,8 +11,8 @@ module UART_RX_tb ();
     wire          data_valid;
 
     //Counters
-    integer error_count;
-    integer correct_count;
+    integer error_count = 0;
+    integer correct_count = 0;
     
     //clock geberation
     initial begin
@@ -28,7 +28,14 @@ module UART_RX_tb ();
 
     //Initial block
     initial begin
-        
+        init();
+        check_rst();
+        //send_packet_without_parity(8'h45, 8);
+        //check_out(8'h45);
+        //send_packet_with_even_parity(8'hff, 8);
+        //check_out(8'hff);
+        //send_packet_with_odd_parity(8'ha8, 8);
+        //check_out(8'ha8);
     end
 
 
@@ -40,7 +47,6 @@ module UART_RX_tb ();
         PAR_EN = 0;
         Prescale = 0;
         RX_IN = 1;
-
     end
     endtask
 
@@ -48,7 +54,7 @@ module UART_RX_tb ();
         @(negedge clk);
         rst= 0;
         @(negedge clk);
-        if ((P_DATA!==0) || (Data_Valid!==0)) begin
+        if ((P_DATA !== 0) || (data_valid !== 0)) begin
             $display("ERROR: Reset is not working well, at %0t",  $time);
             error_count = error_count + 1;
         end
@@ -62,7 +68,7 @@ module UART_RX_tb ();
 
     task send_packet_without_parity(input [7:0] data , input [5:0]   Prescale_in );
     begin
-        integer i;
+        integer i ;
         @(negedge clk);
         PAR_TYP=0;
         PAR_EN=0;
@@ -91,14 +97,14 @@ module UART_RX_tb ();
             RX_IN = data[i];
             repeat (Prescale) @(negedge clk);
         end
-        RX_IN = ^P_data; // Parity bit
+        RX_IN = ^data; // Parity bit
         repeat (Prescale) @(negedge clk);
         RX_IN = 1; // stop bit
         repeat (Prescale) @(negedge clk);
     end
     endtask
     
-    task send_packet_with_even_parity(input [7:0] data , input [5:0] Prescale_in );
+    task send_packet_with_even_parity (input [7:0] data , input [5:0] Prescale_in) ;
     begin
         integer i;
         @(negedge clk);
@@ -119,12 +125,12 @@ module UART_RX_tb ();
     endtask
 
     task check_out(input [7:0] expected_out);
-        if(!Data_Valid) begin
+        if(!data_valid) begin
             $display("ERROR: DATA is not valid");
             error_count = error_count + 1;
         end
         else if (P_DATA !== expected_out) begin
-            $display("ERROR: P_DATA is not as expected")
+            $display("ERROR: P_DATA is not as expected");
         end
         else begin
             correct_count = correct_count + 1;

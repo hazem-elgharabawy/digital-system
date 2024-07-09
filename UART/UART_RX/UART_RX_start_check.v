@@ -1,4 +1,6 @@
 module start_check (
+    input       clk,
+    input       rst,    
     input       start_check_en,
     input       sampled_bit,
     input [4:0] edge_count,
