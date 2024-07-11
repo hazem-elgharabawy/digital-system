@@ -162,8 +162,8 @@ module FSM (
                 if (edge_count >= ((Prescale/2)+2))begin
                     if (stop_error) begin
                         data_valid = 0;
-                        data_sample_en = 0;
-                        counter_enable = 0;
+                        data_sample_en = 1;
+                        counter_enable = 1;
                         deser_en = 0;
                         stop_check_en = 1;
                         start_check_en = 0;
@@ -172,8 +172,8 @@ module FSM (
                     end
                     else begin
                         data_valid = 1;
-                        data_sample_en = 0;
-                        counter_enable = 0;
+                        data_sample_en = 1;
+                        counter_enable = 1;
                         deser_en = 0;
                         stop_check_en = 1;
                         start_check_en = 0;

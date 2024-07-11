@@ -2,7 +2,7 @@ module parity_check (
     input            clk,
     input            rst,   
     input            PAR_TYP,
-    input            parity_check_en,
+    input            par_check_en,
     input            sampled_bit,
     input   [5:0]    Prescale,
     input   [4:0]    edge_count,
@@ -17,13 +17,16 @@ module parity_check (
         if (!rst) begin
             par_error <= 0;
         end
-        else if (parity_check_en && edge_count == ((Prescale/2)+2)) begin
+        else if (par_check_en && edge_count >= ((Prescale/2)+2)) begin
                 if (sampled_bit == calculated_par)begin
                     par_error <= 0;
                 end
                 else begin
                     par_error <= 1; 
                 end
+        end
+        else begin
+            par_error <= 0;
         end
     end
     

@@ -13,13 +13,16 @@ module stop_check (
         if (!rst) begin
             stop_error <= 0;
         end
-        else if (stop_check_en && edge_count == ((Prescale/2)+2)) begin
+        else if (stop_check_en && edge_count >= ((Prescale/2)+2)) begin
             if (sampled_bit) begin
                 stop_error <= 0;
             end
             else begin
                 stop_error <= 1;
             end
+        end
+        else begin
+            stop_error <= 0;
         end
     end
 endmodule

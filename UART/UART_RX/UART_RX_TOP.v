@@ -53,6 +53,7 @@ module TOP (
         .rst(rst),
         .Prescale(Prescale),
         .counter_enable(counter_enable),
+        .PAR_EN(PAR_EN),
         .edge_count(edge_count),
         .bit_count(bit_count)
     );
@@ -95,7 +96,7 @@ module TOP (
         .Prescale(Prescale),
         .edge_count(edge_count),
         .PAR_TYP(PAR_TYP),
-        .parity_check_en(parity_check_en),
+        .par_check_en(par_check_en),
         .sampled_bit(sampled_bit),
         .P_data(P_DATA),
         .par_error(par_error) 

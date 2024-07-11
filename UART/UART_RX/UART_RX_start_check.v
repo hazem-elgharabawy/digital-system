@@ -19,5 +19,8 @@ module start_check (
                 start_glitch <= 0;
             end
         end
+        else begin
+            start_glitch <= 0;
+        end
     end
 endmodule
