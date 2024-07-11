@@ -7,7 +7,7 @@ module parity_check (
     input   [5:0]    Prescale,
     input   [4:0]    edge_count,
     input   [7:0]    P_data,
-    output reg      par_err);
+    output reg      par_error);
 
     wire calculated_par;
 
@@ -15,14 +15,14 @@ module parity_check (
 
     always @(posedge clk) begin
         if (!rst) begin
-            par_err <= 0;
+            par_error <= 0;
         end
         else if (parity_check_en && edge_count == ((Prescale/2)+2)) begin
                 if (sampled_bit == calculated_par)begin
-                    par_err <= 0;
+                    par_error <= 0;
                 end
                 else begin
-                    par_err <= 1; 
+                    par_error <= 1; 
                 end
         end
     end

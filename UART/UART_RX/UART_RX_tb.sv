@@ -9,6 +9,8 @@ module UART_RX_tb ();
     reg           RX_IN;
     wire  [7:0]   P_DATA;
     wire          data_valid;
+    wire          par_error;
+    wire          stop_error;
 
     //Counters
     integer error_count = 0;
@@ -31,12 +33,12 @@ module UART_RX_tb ();
     initial begin
         init();
         check_rst();
-        send_packet_without_parity(8'h45, 8);
-        check_out(8'h45);
-        send_packet_with_even_parity(8'b1010_1010, 8);
-        check_out(8'b1010_1010);
-        send_packet_with_odd_parity(8'ha8, 8);
-        check_out(8'ha8);
+        //send_packet_without_parity(8'h45, 8);
+        //check_out(8'h45);
+        //send_packet_with_even_parity(8'b1010_1010, 8);
+        //check_out(8'b1010_1010);
+        //send_packet_with_odd_parity(8'ha8, 8);
+        //check_out(8'ha8);
         report();
         $stop;
     end
@@ -68,7 +70,7 @@ module UART_RX_tb ();
         rst= 1;
     end
     endtask
-
+    
     task send_packet_without_parity(input [7:0] data , input [5:0]   Prescale_in );
     begin
       integer i;

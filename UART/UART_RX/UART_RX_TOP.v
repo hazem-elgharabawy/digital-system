@@ -6,8 +6,8 @@ module TOP (
     input  [5:0]    Prescale,
     input           RX_IN,
     output [7:0]    P_DATA,
-    output          par_err,
-    output          stop_err,
+    output          par_error,
+    output          stop_error,
     output          data_valid);
     
     wire data_sample_en, counter_enable, deser_en, stop_check_en, start_check_en, par_check_en;  
@@ -85,7 +85,7 @@ module TOP (
         .edge_count(edge_count),
         .stop_check_en(stop_check_en),
         .sampled_bit(sampled_bit),
-        .stop_err(stop_err)
+        .stop_error(stop_error)
     );
 
     // P_DATA as an input???????
@@ -98,7 +98,7 @@ module TOP (
         .parity_check_en(parity_check_en),
         .sampled_bit(sampled_bit),
         .P_data(P_DATA),
-        .par_err(par_err) 
+        .par_error(par_error) 
     );
 
 endmodule
