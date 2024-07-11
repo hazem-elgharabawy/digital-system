@@ -16,7 +16,7 @@ module deserializer (
         else begin
             if (deser_en) begin
                 if (edge_count == ((Prescale/2)+2)) begin
-                    data <= {data,sampled_bit};
+                    data <= {sampled_bit,data[7:1]};
                 end   
             end 
         end     

@@ -11,7 +11,11 @@ module edge_bit_counter (
     always @(posedge clk) begin
         case (Prescale)
             8: begin
-                if (edge_count == 7) begin
+                if (bit_count == 10) begin
+                    edge_count <= 0;
+                    bit_count <= 0;
+                end
+                else if (edge_count == 7) begin
                     edge_count <= 0;
                     bit_count = bit_count +1;
                 end                
@@ -21,7 +25,11 @@ module edge_bit_counter (
             end
 
             16: begin
-                if (edge_count == 15) begin
+                if (bit_count == 10) begin
+                    edge_count <= 0;
+                    bit_count <= 0;
+                end
+                else if (edge_count == 15) begin
                     edge_count <= 0;
                     bit_count = bit_count +1;
                 end                
@@ -31,7 +39,11 @@ module edge_bit_counter (
             end
 
             32:begin
-                if (edge_count == 31) begin
+                if (bit_count == 10) begin
+                    edge_count <= 0;
+                    bit_count <= 0;
+                end
+                else if (edge_count == 31) begin
                     edge_count <= 0;
                     bit_count = bit_count +1;
                 end                

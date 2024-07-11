@@ -64,8 +64,8 @@ module FSM (
                 end                
             end
             DATA : begin
-                if (edge_count == (Prescale -1) ) begin
-                    if (bit_count == 9) begin
+                if (edge_count == (Prescale -1)) begin
+                    if (bit_count == 8) begin
                         if (PAR_EN) begin
                             next_state = PARITY;    
                         end
@@ -83,7 +83,7 @@ module FSM (
             end
             PARITY : begin
                 if (edge_count == (Prescale -1)) begin
-                    if(par_error ==1) begin
+                    if(par_error == 1) begin
                         next_state = IDLE;
                     end
                     else begin

@@ -16,11 +16,12 @@ module UART_RX_tb ();
     
     //clock geberation
     initial begin
-        clk = 0;
+        clk_tx = 0;
         forever begin
-            #5  clk = ~clk;
+            #5  clk_tx = ~clk_tx;
         end
     end
+
 
     //inistantiation
     TOP DUT (.*);
@@ -32,10 +33,10 @@ module UART_RX_tb ();
         check_rst();
         send_packet_without_parity(8'h45, 8);
         check_out(8'h45);
-        //send_packet_with_even_parity(8'hff, 8);
-        //check_out(8'hff);
-        //send_packet_with_odd_parity(8'ha8, 8);
-        //check_out(8'ha8);
+        send_packet_with_even_parity(8'b1010_1010, 8);
+        check_out(8'b1010_1010);
+        send_packet_with_odd_parity(8'ha8, 8);
+        check_out(8'ha8);
         report();
         $stop;
     end
@@ -70,7 +71,7 @@ module UART_RX_tb ();
 
     task send_packet_without_parity(input [7:0] data , input [5:0]   Prescale_in );
     begin
-        integer i ;
+      integer i;
         @(negedge clk);
         PAR_TYP = 0;
         PAR_EN = 0;
@@ -88,7 +89,7 @@ module UART_RX_tb ();
 
     task send_packet_with_odd_parity(input [7:0] data , input [5:0] Prescale_in );
     begin
-        integer i;
+         integer i;
         @(negedge clk);
         PAR_TYP = 0;
         PAR_EN = 1;
@@ -133,6 +134,7 @@ module UART_RX_tb ();
         end
         else if (P_DATA !== expected_out) begin
             $display("ERROR: P_DATA is not as expected");
+            error_count = error_count + 1;
         end
         else begin
             correct_count = correct_count + 1;
