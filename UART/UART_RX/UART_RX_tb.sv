@@ -16,9 +16,9 @@ module UART_RX_tb ();
     
     //clock geberation
     initial begin
-        clk_tx = 0;
+        clk = 0;
         forever begin
-            #5  clk_tx = ~clk_tx;
+            #5  clk0 = ~clk;
         end
     end
 
