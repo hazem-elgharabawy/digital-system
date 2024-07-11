@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module UART_RX_tb ();
 
     //signals
@@ -15,12 +16,13 @@ module UART_RX_tb ();
     //Counters
     integer error_count = 0;
     integer correct_count = 0;
-    
+    real TX_PERIOD = 8.68;
     //clock geberation
     initial begin
         clk = 0;
+        Prescale = 1;
         forever begin
-            #5  clk = ~clk;
+            #(TX_PERIOD/(2*Prescale))  clk = ~clk;
         end
     end
 
@@ -34,15 +36,15 @@ module UART_RX_tb ();
     initial begin
         init();
         check_rst();
-        send_packet_without_parity(8'h45, 32);
+        send_packet_without_parity(8'h45, 8);
         check_out(8'h45);
-        send_packet_with_even_parity(8'b1010_1010, 32);
+        send_packet_with_even_parity(8'b1010_1010, 8);
         check_out(8'b1010_1010);
-        send_packet_with_odd_parity(8'ha8, 32);
+        send_packet_with_odd_parity(8'ha8, 16);
         check_out(8'ha8);
-        send_packet_with_parity_error(8'ha8,32);
+        send_packet_with_parity_error(8'ha8,16);
         check_detected_error();
-        send_packet_with_stop_error(8'ha8,32);
+        send_packet_with_stop_error(8'ha8,8);
         check_detected_error();
         report();
         $stop;
@@ -54,8 +56,7 @@ module UART_RX_tb ();
     task init ();begin
         rst = 1;
         PAR_TYP = 0;
-        PAR_EN = 0;
-        Prescale = 0;
+        PAR_EN = 0; 
         RX_IN = 1;
     end
     endtask
@@ -134,24 +135,24 @@ module UART_RX_tb ();
     end
     endtask
 
-task send_packet_with_parity_error (input [7:0] data , input [5:0] Prescale_in) ;
-    begin
-        integer i;
-        @(negedge clk);
-        PAR_TYP = 1;
-        PAR_EN = 1;
-        Prescale = Prescale_in;
-        RX_IN = 0; // start bit
-        repeat (Prescale) @(negedge clk);
-        for ( i = 0 ; i < 8 ; i = i + 1 ) begin
-            RX_IN = data[i];
+    task send_packet_with_parity_error (input [7:0] data , input [5:0] Prescale_in) ;
+        begin
+            integer i;
+            @(negedge clk);
+            PAR_TYP = 1;
+            PAR_EN = 1;
+            Prescale = Prescale_in;
+            RX_IN = 0; // start bit
+            repeat (Prescale) @(negedge clk);
+            for ( i = 0 ; i < 8 ; i = i + 1 ) begin
+                RX_IN = data[i];
+                repeat (Prescale) @(negedge clk);
+            end
+            RX_IN = ^data; // WRONG Parity bit
+            repeat (Prescale) @(negedge clk);
+            RX_IN = 1; // stop bit
             repeat (Prescale) @(negedge clk);
         end
-        RX_IN = ^data; // WRONG Parity bit
-        repeat (Prescale) @(negedge clk);
-        RX_IN = 1; // stop bit
-        repeat (Prescale) @(negedge clk);
-    end
     endtask
 
     task send_packet_with_stop_error (input [7:0] data , input [5:0] Prescale_in) ;
@@ -195,7 +196,7 @@ task send_packet_with_parity_error (input [7:0] data , input [5:0] Prescale_in) 
         end
     endtask
 
-task check_detected_error();
+    task check_detected_error();
         if(data_valid) begin
             $display("ERROR: DATA is valid (expected error)");
             if (!par_error) begin
