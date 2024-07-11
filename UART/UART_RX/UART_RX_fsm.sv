@@ -159,7 +159,7 @@ module FSM (
                 par_check_en = 1;
             end
             STOP : begin 
-                if (edge_count >= ((Prescale/2)+2))begin
+                if (edge_count > ((Prescale/2)+2))begin
                     if (stop_error) begin
                         data_valid = 0;
                         data_sample_en = 1;
