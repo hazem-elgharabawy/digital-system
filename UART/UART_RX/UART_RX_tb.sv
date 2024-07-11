@@ -18,7 +18,7 @@ module UART_RX_tb ();
     initial begin
         clk = 0;
         forever begin
-            #5  clk0 = ~clk;
+            #5  clk = ~clk;
         end
     end
 

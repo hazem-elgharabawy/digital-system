@@ -6,12 +6,13 @@ module TOP (
     input  [5:0]    Prescale,
     input           RX_IN,
     output [7:0]    P_DATA,
-    output          data_valid
-);
+    output          par_err,
+    output          stop_err,
+    output          data_valid);
     
     wire data_sample_en, counter_enable, deser_en, stop_check_en, start_check_en, par_check_en;  
 
-    wire stop_error, par_error, start_glitch;
+    wire start_glitch;
 
     wire [4:0]edge_count;
     wire [3:0] bit_count;
