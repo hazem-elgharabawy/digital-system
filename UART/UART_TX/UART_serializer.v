@@ -15,8 +15,7 @@ module serializer #(
 //////////////////SERIAL OUTPUT///////////////////////////
     always @(posedge clk or negedge reset) begin
         if (!reset) begin
-            ser_data <= 0;
-            ser_done <=0;
+            ser_data <= 0
             temp <=0;
         end
         else if (ser_en)begin
