@@ -4,9 +4,11 @@ module UART_TX_TOP #(
 ) (
     input clk , reset,
     input Data_Valid,
-    input par_en, PAR_TYP,
+    input par_en,
+    input PAR_TYP,
     input [FRAME_WIDTH-1:0] P_Data,
-    output TX_OUT, busy,
+    output TX_OUT,
+    output busy,
     //DFT PORTS
     input test_mode,
     input scan_clk,
@@ -26,8 +28,8 @@ module UART_TX_TOP #(
     wire stop_bit;
     wire ser_data;
     // DFT signals
-    wire M_CLK,
-    wire M_RST,
+    wire M_CLK;
+    wire M_RST;
 
     assign start_bit  = 0;
     assign stop_bit  = 1;
