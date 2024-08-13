@@ -1,30 +1,34 @@
 module ALU_16Bit (
     input wire          CLK,
     input wire          RST,
+    input wire          ALU_EN,
     input wire [3:0]    ALU_FUN,
     input wire [15:0]   A,
     input wire [15:0]   B,
     output reg [15:0]   ALU_OUT, 
-    output reg          OUT_VALID
+    output reg          ALU_OUT_VALID
 );
     reg [15:0] ALU_OUT_COMB;
-    reg OUT_VALID_COMB;
+    reg ALU_OUT_VALID_COMB;
 
 
     always @(posedge CLK or negedge RST) begin
         if (!RST) begin
             ALU_OUT <= 0;
-            OUT_VALID <= 0;
+            ALU_OUT_VALID <= 0;
         end
         else begin
             ALU_OUT <= ALU_OUT_COMB;
-            OUT_VALID <= OUT_VALID_COMB; 
+            ALU_OUT_VALID <= ALU_OUT_VALID_COMB; 
         end
     end
 
 
     always @(*) begin
-        OUT_VALID_COMB = 1;
+        ALU_OUT_VALID_COMB = 0;
+        ALU_OUT_COMB = 0;
+        if (ALU_EN) begin
+        ALU_OUT_VALID_COMB = 1;
         case (ALU_FUN)
            4'b0000 : begin 
                 ALU_OUT_COMB = A + B;
@@ -93,5 +97,6 @@ module ALU_16Bit (
                 ALU_OUT_COMB = 16'b0;
             end 
         endcase
+    end
     end
 endmodule

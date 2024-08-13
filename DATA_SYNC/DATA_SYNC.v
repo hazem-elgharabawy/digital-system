@@ -20,7 +20,7 @@ module DATA_SYNC #(
     // pulse gen signals
     reg pulse_gen_ff;
     wire pulse_gen_out;
-    assign pulse_gen_out = ((!pulse_gen_ff) && last_ff_out);
+    
 
     //mux
     wire [BUS_WIDTH-1:0] mux_out;
@@ -46,7 +46,7 @@ module DATA_SYNC #(
             pulse_gen_ff <= last_ff_out;
         end
     end
-
+    assign pulse_gen_out = ((!pulse_gen_ff) && last_ff_out);
     
     //bit sync
     always @(posedge CLK or negedge RST) begin

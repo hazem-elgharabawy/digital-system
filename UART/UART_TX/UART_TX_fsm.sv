@@ -107,7 +107,7 @@ module FSM #(
             STOP : begin
                 ser_en = 0;
                 mux_sel = 0;
-                busy_c = 1; 
+                busy_c = 0; 
             end
             default:begin
                 ser_en = 0 ;
