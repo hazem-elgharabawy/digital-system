@@ -1,8 +1,11 @@
 module Register_file (
-    input [15:0] WrData,
-    input [2:0]  Address,
-    input WrEn, RdEn, CLK, RST,
-    output reg [15:0] RdData  
+    input wire          CLK,
+    input wire          RST,
+    input wire          WrEn,
+    input wire          RdEn,
+    input wire [2:0]    Address,
+    input wire [15:0]   WrData,
+    output reg [15:0]   RdData  
 );
     reg [15:0] REG [7:0];
 
@@ -20,7 +23,7 @@ module Register_file (
          else if (WrEn && ~RdEn) begin
             reg_file[Address] <= WrData;
         end
-         else if (RdEn && ~WrEn )begin
+         else if (RdEn && ~WrEn)begin
             RdData <= reg_file[Address];
         end
     end

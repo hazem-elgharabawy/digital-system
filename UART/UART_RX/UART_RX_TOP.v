@@ -1,6 +1,6 @@
-module TOP (
-    input           clk,
-    input           rst,
+module UART_RX_TOP (
+    input           CLK,
+    input           RST,
     input           PAR_TYP,
     input           PAR_EN,
     input  [5:0]    Prescale,
@@ -19,8 +19,8 @@ module TOP (
     wire sampled_bit;
 
     data_sampling sampler (
-        .clk(clk),
-        .rst(rst),
+        .clk(CLK),
+        .rst(RST),
         .RX_IN(RX_IN),
         .Prescale(Prescale),
         .data_sample_en(data_sample_en),
@@ -29,8 +29,8 @@ module TOP (
     );
 
     FSM fsm(
-        .clk(clk),
-        .rst(rst),
+        .clk(CLK),
+        .rst(RST),
         .PAR_EN(PAR_EN),
         .RX_IN(RX_IN),
         .Prescale(Prescale),
@@ -49,8 +49,8 @@ module TOP (
     );
 
     edge_bit_counter edge_bit_counter(
-        .clk(clk),
-        .rst(rst),
+        .clk(CLK),
+        .rst(RST),
         .Prescale(Prescale),
         .counter_enable(counter_enable),
         .PAR_EN(PAR_EN),
@@ -60,8 +60,8 @@ module TOP (
 
     // check deserializer clock
     deserializer deserializer (
-        .clk(clk),
-        .rst(rst),
+        .clk(CLK),
+        .rst(RST),
         .sampled_bit(sampled_bit),
         .deser_en(deser_en),
         .Prescale(Prescale),
@@ -70,8 +70,8 @@ module TOP (
     );
 
     start_check start_check (
-        .clk(clk),
-        .rst(rst),
+        .clk(CLK),
+        .rst(RST),
         .Prescale(Prescale),
         .edge_count(edge_count),
         .start_check_en(start_check_en),
@@ -80,8 +80,8 @@ module TOP (
     );
 
     stop_check stop_check (
-        .clk(clk),
-        .rst(rst),
+        .clk(CLK),
+        .rst(RST),
         .Prescale(Prescale),
         .edge_count(edge_count),
         .stop_check_en(stop_check_en),
@@ -91,8 +91,8 @@ module TOP (
 
     // P_DATA as an input???????
     parity_check parity_check (
-        .clk(clk),
-        .rst(rst),
+        .clk(CLK),
+        .rst(RST),
         .Prescale(Prescale),
         .edge_count(edge_count),
         .PAR_TYP(PAR_TYP),

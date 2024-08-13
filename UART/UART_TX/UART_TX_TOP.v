@@ -2,7 +2,8 @@ module UART_TX_TOP #(
     parameter FRAME_WIDTH = 8,
     parameter COUNTER_WIDTH = 3
 ) (
-    input clk , reset,
+    input CLK ,
+    input RST,
     input Data_Valid,
     input par_en,
     input PAR_TYP,
@@ -35,8 +36,8 @@ module UART_TX_TOP #(
     assign stop_bit  = 1;
 
     //DFT_insertion
-    mux2X1 mux_CLK (.IN_0(clk),.IN_1(scan_clk),.SEL(test_mode),.OUT(M_CLK));
-    mux2X1 mux_RST (.IN_0(reset),.IN_1(scan_rst),.SEL(test_mode),.OUT(M_RST));
+    mux2X1 mux_CLK (.IN_0(CLK),.IN_1(scan_clk),.SEL(test_mode),.OUT(M_CLK));
+    mux2X1 mux_RST (.IN_0(RST),.IN_1(scan_rst),.SEL(test_mode),.OUT(M_RST));
 
     // instantiation
     serializer serializer (

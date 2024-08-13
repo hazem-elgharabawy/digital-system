@@ -1,4 +1,4 @@
-module FIFO_TOP #(
+module ASYNC_FIFO_TOP #(
     parameter DATA_WIDTH = 8,
     parameter FIFO_DEPTH = 8
 ) (
