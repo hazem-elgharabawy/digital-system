@@ -17,7 +17,7 @@ module UART_TOP (
     UART_TX_TOP TX (
         .CLK(TX_CLK) ,
         .RST(SYNC_RST_2),
-        .Data_Valid(~F_EMPTY),
+        .Data_Valid(!F_EMPTY),
         .par_en(UART_CONFIG[0]),
         .PAR_TYP(UART_CONFIG[1]),
         .P_Data(RD_DATA),

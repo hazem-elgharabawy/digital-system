@@ -1,14 +1,17 @@
-module ALU_16Bit (
+module ALU #(
+    parameter DATA_WIDTH = 8;
+    parameter FUNC_WIDTH = 4;
+) (
     input wire          CLK,
     input wire          RST,
     input wire          ALU_EN,
-    input wire [3:0]    ALU_FUN,
-    input wire [15:0]   A,
-    input wire [15:0]   B,
-    output reg [15:0]   ALU_OUT, 
+    input wire [FUNC_WIDTH-1:0]    ALU_FUN,
+    input wire [DATA_WIDTH-1:0]   A,
+    input wire [DATA_WIDTH-1:0]   B,
+    output reg [DATA_WIDTH-1:0]   ALU_OUT, 
     output reg          ALU_OUT_VALID
 );
-    reg [15:0] ALU_OUT_COMB;
+    reg [DATA_WIDTH-1:0] ALU_OUT_COMB;
     reg ALU_OUT_VALID_COMB;
 
 

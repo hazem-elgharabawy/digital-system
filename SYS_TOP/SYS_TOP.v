@@ -15,8 +15,8 @@ module SYS_TOP (
     wire RX_DATA; // RX_DATA before sync
     wire RX_DATA_VALID;
     wire busy;
-    wire RX_FRAME;  // RX_DATA after sync
-    wire RX_FRAME_VALID;
+    wire RX_P_Data;  // RX_DATA after sync
+    wire RX_P_Data_VALID;
 
     wire [7:0] UART_CONFIG;
 
@@ -83,21 +83,22 @@ module SYS_TOP (
     SYS_CTRL SYS_CTRL(
         .CLK(REF_CLK),
         .RST(SYNC_RST_1),
-        .DATA_IN(RX_FRAME),
-        .DATA_IN_VALID(RX_FRAME_VALID),
+        .RX_P_Data(RX_P_Data),
+        .RX_P_Data_VALID(RX_P_Data_VALID),
         .Rd_D(Rd_D),
         .Rd_D_Valid(Rd_D_Valid),
         .ALU_OUT(ALU_OUT),
         .ALU_OUT_Valid(ALU_OUT_VALID),
         .F_FULL(F_FULL),
+        .CLK_G_EN(GATE_EN),
         .WrEn(WrEn),
         .RdEn(RdEn),
-        .Addr(Addr),
+        .Address(Addr),
         .Wr_D(Wr_D),
-        .FUN(FUN),
+        .ALU_FUN(FUN),
         .ALU_EN(ALU_EN),
         .W_INC(W_INC),
-        .Wr_DATA(Wr_DATA)
+        .WR_DATA(Wr_DATA)
     );
 
     Register_file REG_FILE (
@@ -130,8 +131,8 @@ module SYS_TOP (
         .RST(SYNC_RST_1),
         .bus_enable(RX_DATA_VALID),
         .unsync_bus(RX_DATA),
-        .enable_pulse(RX_FRAME_VALID),
-        .sync_bus(RX_FRAME)
+        .enable_pulse(RX_P_Data_VALID),
+        .sync_bus(RX_P_Data)
     );
 
     RST_SYNC RST_SYNC_1 (
