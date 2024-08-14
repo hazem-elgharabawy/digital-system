@@ -115,7 +115,7 @@ module SYS_TOP (
         .RdData(Rd_D) 
     );
 
-    ALU_16Bit ALU (
+    ALU ALU (
         .CLK(ALU_CLK),
         .RST(SYNC_RST_1),
         .ALU_FUN(FUN),
