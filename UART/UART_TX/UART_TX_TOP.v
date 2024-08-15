@@ -9,14 +9,15 @@ module UART_TX_TOP #(
     input PAR_TYP,
     input [FRAME_WIDTH-1:0] P_Data,
     output TX_OUT,
-    output busy,
+    output busy
     //DFT PORTS
+    /*
     input test_mode,
     input scan_clk,
     input scan_rst,
     input SE,
     input SI,
-    output SO
+    output SO*/
     
 );
     
@@ -36,13 +37,13 @@ module UART_TX_TOP #(
     assign stop_bit  = 1;
 
     //DFT_insertion
-    mux2X1 mux_CLK (.IN_0(CLK),.IN_1(scan_clk),.SEL(test_mode),.OUT(M_CLK));
-    mux2X1 mux_RST (.IN_0(RST),.IN_1(scan_rst),.SEL(test_mode),.OUT(M_RST));
+    /*mux2X1 mux_CLK (.IN_0(CLK),.IN_1(scan_clk),.SEL(test_mode),.OUT(M_CLK));
+    mux2X1 mux_RST (.IN_0(RST),.IN_1(scan_rst),.SEL(test_mode),.OUT(M_RST));*/
 
     // instantiation
     serializer serializer (
-        .clk(M_CLK),
-        .reset(M_RST), 
+        .clk(CLK),
+        .reset(RST), 
         .ser_en(ser_en),
         .Data_Valid(Data_Valid),
         .P_Data(P_Data),
@@ -50,17 +51,17 @@ module UART_TX_TOP #(
         .ser_data(ser_data)
     );
     parity_calc parity (
-        .clk(M_CLK),
-        .reset(M_RST),
+        .clk(CLK),
+        .reset(RST),
         .Data_Valid(Data_Valid),
         .PAR_TYP(PAR_TYP),
         .P_Data(P_Data),
         .par_bit(par_bit)
     );
 
-    FSM fsm (
-        .clk(M_CLK),
-        .reset(M_RST),
+    UART_TX_FSM fsm (
+        .clk(CLK),
+        .reset(RST),
         .Data_Valid(Data_Valid),
         .par_en(par_en),
         .ser_done(ser_done),

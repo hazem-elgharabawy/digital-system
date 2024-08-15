@@ -28,7 +28,7 @@ module UART_RX_TOP (
         .sampled_bit(sampled_bit)
     );
 
-    FSM fsm(
+    UART_RX_FSM fsm(
         .clk(CLK),
         .rst(RST),
         .PAR_EN(PAR_EN),

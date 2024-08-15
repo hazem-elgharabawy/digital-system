@@ -1,4 +1,4 @@
-module FSM #(
+module UART_TX_FSM #(
     parameter FRAME_WIDTH = 8
 ) (
     input clk,

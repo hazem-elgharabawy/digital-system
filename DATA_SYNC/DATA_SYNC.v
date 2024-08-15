@@ -1,67 +1,95 @@
-module DATA_SYNC #(
-    parameter NUM_STAGES = 2,
-    parameter BUS_WIDTH = 8
-) (
-    input  wire                 CLK,
-    input  wire                 RST,
-    input  wire                 bus_enable,
-    input  wire [BUS_WIDTH-1:0] unsync_bus,
-    output reg                  enable_pulse,
-    output reg  [BUS_WIDTH-1:0] sync_bus
+
+/////////////////////////////////////////////////////////////
+//////////////////// data synchronizer //////////////////////
+/////////////////////////////////////////////////////////////
+
+module DATA_SYNC # ( 
+     parameter NUM_STAGES = 2 ,
+	 parameter BUS_WIDTH = 8 
+)(
+input    wire                      CLK,
+input    wire                      RST,
+input    wire     [BUS_WIDTH-1:0]  unsync_bus,
+input    wire                      bus_enable,
+output   reg      [BUS_WIDTH-1:0]  sync_bus,
+output   reg                       enable_pulse_d
 );
 
-    //chain of flip flops
-    reg [NUM_STAGES-1:0] en_sync_chain;
-
-    //last flip flop out
-    wire last_ff_out; 
-    assign last_ff_out = en_sync_chain[NUM_STAGES-1];
-    
-    // pulse gen signals
-    reg pulse_gen_ff;
-    wire pulse_gen_out;
-    
-
-    //mux
-    wire [BUS_WIDTH-1:0] mux_out;
-    assign mux_out = (pulse_gen_out)? unsync_bus : 0;
 
 
-    //multi FLIP FLOP 
-    always @(posedge CLK or negedge RST) begin
-        if(!RST)begin
-            en_sync_chain <=0;        
-        end
-        else begin
-            en_sync_chain <= {en_sync_chain[NUM_STAGES-2:0],bus_enable};
-        end
-    end
+//internal connections
+reg   [NUM_STAGES-1:0]    sync_reg;
+reg                       enable_flop ;
+					 
+wire                      enable_pulse ;
 
-    //pulse gen   
-    always @(posedge CLK or negedge RST) begin
-        if (!RST) begin
-            pulse_gen_ff <= 0;
-        end
-        else begin
-            pulse_gen_ff <= last_ff_out;
-        end
-    end
-    assign pulse_gen_out = ((!pulse_gen_ff) && last_ff_out);
-    
-    //bit sync
-    always @(posedge CLK or negedge RST) begin
-        if (!RST) begin
-            sync_bus <= 0;
-            enable_pulse <= 0;
-        end
-        else begin
-            sync_bus <= mux_out;
-            enable_pulse <= pulse_gen_out;
-        end
-    end
-    
-    
-    
-    
+wire  [BUS_WIDTH-1:0]     sync_bus_c ;
+					 
+//----------------- Multi flop synchronizer --------------
+
+always @(posedge CLK or negedge RST)
+ begin
+  if(!RST)      // active low
+   begin
+    sync_reg <= 'b0 ;
+   end
+  else
+   begin
+    sync_reg <= {sync_reg[NUM_STAGES-2:0],bus_enable};
+   end  
+ end
+ 
+
+//----------------- pulse generator --------------------
+
+always @(posedge CLK or negedge RST)
+ begin
+  if(!RST)      // active low
+   begin
+    enable_flop <= 1'b0 ;	
+   end
+  else
+   begin
+    enable_flop <= sync_reg[NUM_STAGES-1] ;
+   end  
+ end
+
+ 
+assign enable_pulse = sync_reg[NUM_STAGES-1] && !enable_flop ;
+
+
+//----------------- multiplexing --------------------
+
+assign sync_bus_c =  enable_pulse ? unsync_bus : sync_bus ;  
+
+
+//----------- destination domain flop ---------------
+
+always @(posedge CLK or negedge RST)
+ begin
+  if(!RST)      // active low
+   begin
+    sync_bus <= 'b0 ;	
+   end
+  else
+   begin
+    sync_bus <= sync_bus_c ;
+   end  
+ end
+ 
+//--------------- delay generated pulse ------------
+
+always @(posedge CLK or negedge RST)
+ begin
+  if(!RST)      // active low
+   begin
+    enable_pulse_d <= 1'b0 ;	
+   end
+  else
+   begin
+    enable_pulse_d <= enable_pulse ;
+   end  
+ end
+ 
 
 endmodule

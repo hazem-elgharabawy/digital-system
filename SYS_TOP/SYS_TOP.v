@@ -1,8 +1,13 @@
-module SYS_TOP (
+module SYS_TOP #(
+    parameter DATA_WIDTH = 8,
+    parameter RF_ADDR = 4
+) (
     input  wire REF_CLK,
     input  wire RST,
     input  wire UART_CLK,
     input  wire RX_IN,
+    output wire parity_error,
+    output wire stop_error,
     output wire TX_OUT
 );
 
@@ -10,52 +15,55 @@ module SYS_TOP (
     wire RX_CLK;
     wire SYNC_RST_1;
     wire SYNC_RST_2;
-    wire Rd_DATA;  // TX_DATA after sync
-    wire F_EMPTY; 
-    wire RX_DATA; // RX_DATA before sync
-    wire RX_DATA_VALID;
+    wire [DATA_WIDTH-1:0] TX_P_DATA_S;  // TX_DATA after sync
+    wire [DATA_WIDTH-1:0] RX_P_DATA_A; // RX_P_DATA_A before sync
+    wire RX_P_DATA_VALID_A;
     wire busy;
-    wire RX_P_Data;  // RX_DATA after sync
-    wire RX_P_Data_VALID;
+    wire [DATA_WIDTH-1:0] RX_P_Data_S;  // RX_P_DATA_A after sync
+    wire RX_P_Data_VALID_S;
 
-    wire [7:0] UART_CONFIG;
+    wire [DATA_WIDTH-1:0] UART_CONFIG;
 
     wire W_INC;
     wire R_INC;
-    wire Wr_DATA; // TX_DATA before sync
+    wire [DATA_WIDTH-1:0] TX_P_DATA_A; // TX_DATA before sync
     wire F_FULL;
     wire F_EMPTY;
     //REGFILE
     wire WrEn;
     wire RdEn;
-    wire Addr;
-    wire Wr_D;
-    wire Rd_D;
+    wire [RF_ADDR-1:0] Addr;
+    wire [DATA_WIDTH-1:0] Wr_D;
+    wire [DATA_WIDTH-1:0] Rd_D;
     wire Rd_D_Valid;
     
     wire ALU_CLK;
-    wire FUN;
-    wire ALU_EN,
-    wire Op_A;
-    wire Op_B;
-    wire ALU_OUT;
+    wire [3:0] FUN;
+    wire ALU_EN;
+    wire [DATA_WIDTH-1:0] Op_A;
+    wire [DATA_WIDTH-1:0] Op_B;
+    wire [(2*DATA_WIDTH)-1:0] ALU_OUT;
     wire OUT_VALID;
 
     wire GATE_EN;
 
-    wire Div_Ratio;
+    wire [7:0] Div_Ratio;
+    wire [7:0] Div_Ratio_RX;
 
 
 
     UART_TOP UART(
         .TX_CLK(TX_CLK),
         .RX_CLK(RX_CLK),
-        .SYNC_RST_2(SYNC_RST_2),
+        .RST(SYNC_RST_2),
+        .RX_IN(RX_IN),
         .UART_CONFIG(UART_CONFIG),
-        .Rd_DATA(Rd_DATA),
-        .F_EMPTY(F_EMPTY),
-        .RX_DATA(RX_DATA),
-        .RX_DATA_VALID(RX_DATA_VALID),
+        .TX_P_DATA(TX_P_DATA_S),      
+        .TX_P_DATA_VALID(!F_EMPTY),
+        .RX_P_DATA(RX_P_DATA_A), 
+        .RX_P_DATA_VALID(RX_P_DATA_VALID_A),
+        .par_error(parity_error),
+        .stop_error(stop_error),
         .TX_OUT(TX_OUT),
         .busy(busy)
     );
@@ -67,24 +75,37 @@ module SYS_TOP (
         .PULSE(R_INC)    
     );
 
+    Async_fifo #(.D_SIZE(DATA_WIDTH) , .P_SIZE(4)  , .F_DEPTH(8)) U0_UART_FIFO (
+        .i_w_clk(REF_CLK),
+        .i_w_rstn(SYNC_RST_1),  
+        .i_w_inc(W_INC),
+        .i_w_data(TX_P_DATA_A),             
+        .i_r_clk(TX_CLK),              
+        .i_r_rstn(SYNC_RST_2),              
+        .i_r_inc(R_INC),              
+        .o_r_data(TX_P_DATA_S),             
+        .o_full(F_FULL),               
+        .o_empty(F_EMPTY)               
+    );
+    /*
     ASYNC_FIFO_TOP ASYNC_FIFO (
-        .W_CL(REF_CLK),
+        .W_CLK(REF_CLK),
         .W_RST(SYNC_RST_1),
         .W_INC(W_INC),
         .R_CLK(TX_CLK),
         .R_RST(SYNC_RST_2),
         .R_INC(R_INC),
-        .Wr_DATA(Wr_DATA),
-        .Rd_DATA(Rd_DATA),
+        .TX_P_DATA_A(TX_P_DATA_A),
+        .TX_P_DATA_S(TX_P_DATA_S),
         .FULL(F_FULL),
         .EMPTY(F_EMPTY)
-    );
+    );*/
 
     SYS_CTRL SYS_CTRL(
         .CLK(REF_CLK),
         .RST(SYNC_RST_1),
-        .RX_P_Data(RX_P_Data),
-        .RX_P_Data_VALID(RX_P_Data_VALID),
+        .RX_P_Data(RX_P_Data_S),
+        .RX_P_Data_VALID(RX_P_Data_VALID_S),
         .Rd_D(Rd_D),
         .Rd_D_Valid(Rd_D_Valid),
         .ALU_OUT(ALU_OUT),
@@ -98,7 +119,7 @@ module SYS_TOP (
         .ALU_FUN(FUN),
         .ALU_EN(ALU_EN),
         .W_INC(W_INC),
-        .WR_DATA(Wr_DATA)
+        .TX_P_DATA(TX_P_DATA_A)
     );
 
     Register_file REG_FILE (
@@ -108,11 +129,12 @@ module SYS_TOP (
         .RdEn(RdEn),
         .Address(Addr),
         .WrData(Wr_D),
-        .REG_0(Op_A),
-        .REG_1(Op_B),
-        .REG_2(UART_CONFIG),
-        .REG_3(Div_Ratio),
-        .RdData(Rd_D) 
+        .REG0(Op_A),
+        .REG1(Op_B),
+        .REG2(UART_CONFIG),
+        .REG3(Div_Ratio),
+        .RdData(Rd_D),
+        .RdData_Valid(Rd_D_Valid) 
     );
 
     ALU ALU (
@@ -129,10 +151,10 @@ module SYS_TOP (
     DATA_SYNC DATA_SYNCHRONIZER (
         .CLK(REF_CLK),
         .RST(SYNC_RST_1),
-        .bus_enable(RX_DATA_VALID),
-        .unsync_bus(RX_DATA),
-        .enable_pulse(RX_P_Data_VALID),
-        .sync_bus(RX_P_Data)
+        .bus_enable(RX_P_DATA_VALID_A),
+        .unsync_bus(RX_P_DATA_A),
+        .enable_pulse_d(RX_P_Data_VALID_S),
+        .sync_bus(RX_P_Data_S)
     );
 
     RST_SYNC RST_SYNC_1 (
@@ -153,18 +175,23 @@ module SYS_TOP (
         .GATED_CLK(ALU_CLK)
     );
 
+    CLKDIV_MUX CLKDIV_MUX (
+        .IN(UART_CONFIG[7:2]),
+        .OUT(Div_Ratio_RX)
+    );
+
     ClkDiv RX_CLK_DIV (
         .i_ref_clk(UART_CLK), 
         .i_rst(SYNC_RST_2),     
-        .i_clk_en(1),   
-        .i_div_ratio(Prescale),
+        .i_clk_en(1'b1),   
+        .i_div_ratio(Div_Ratio_RX),
         .o_div_clk(RX_CLK)   
     );
 
     ClkDiv TX_CLK_DIV (
         .i_ref_clk(UART_CLK), 
         .i_rst(SYNC_RST_2),     
-        .i_clk_en(1),   
+        .i_clk_en(1'b1),   
         .i_div_ratio(Div_Ratio),
         .o_div_clk(TX_CLK)   
     );

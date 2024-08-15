@@ -1,4 +1,4 @@
-module FSM (
+module UART_RX_FSM (
     input clk,
     input rst,
     input PAR_EN,
@@ -24,7 +24,8 @@ module FSM (
         START,
         DATA,
         PARITY,
-        STOP
+        STOP,
+        ERROR_CHECK
     } state_e ;
 
     state_e current_state, next_state;

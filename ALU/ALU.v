@@ -1,6 +1,6 @@
 module ALU #(
-    parameter DATA_WIDTH = 8;
-    parameter FUNC_WIDTH = 4;
+    parameter DATA_WIDTH = 8,
+    parameter FUNC_WIDTH = 4
 ) (
     input wire          CLK,
     input wire          RST,
@@ -8,12 +8,12 @@ module ALU #(
     input wire [FUNC_WIDTH-1:0]    ALU_FUN,
     input wire [DATA_WIDTH-1:0]   A,
     input wire [DATA_WIDTH-1:0]   B,
-    output reg [DATA_WIDTH-1:0]   ALU_OUT, 
+    output reg [(2*DATA_WIDTH)-1:0]   ALU_OUT, 
     output reg          ALU_OUT_VALID
 );
-    reg [DATA_WIDTH-1:0] ALU_OUT_COMB;
+    reg [(2*DATA_WIDTH)-1:0] ALU_OUT_COMB;
     reg ALU_OUT_VALID_COMB;
-
+     
 
     always @(posedge CLK or negedge RST) begin
         if (!RST) begin
@@ -100,6 +100,9 @@ module ALU #(
                 ALU_OUT_COMB = 16'b0;
             end 
         endcase
+    end
+    else begin
+        ALU_OUT_VALID_COMB = 0;
     end
     end
 endmodule
