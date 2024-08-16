@@ -1,0 +1,3018 @@
+Warning: Design 'SYS_TOP' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 100
+Design : SYS_TOP
+Version: K-2015.06
+Date   : Fri Aug 16 02:41:31 2024
+****************************************
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c   Library: scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c
+Wire Load Model Mode: top
+
+  Startpoint: SYS_CTRL/RF_ADDR_SAVED_reg[1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/RF_ADDR_SAVED_reg[1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/RF_ADDR_SAVED_reg[1]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/RF_ADDR_SAVED_reg[1]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U74/Y (OAI22X1M)                               0.09       0.44 f
+  SYS_CTRL/RF_ADDR_SAVED_reg[1]/D (DFFRX1M)               0.00       0.44 f
+  data arrival time                                                  0.44
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/RF_ADDR_SAVED_reg[1]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.35
+
+
+  Startpoint: SYS_CTRL/RF_ADDR_SAVED_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/RF_ADDR_SAVED_reg[0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/RF_ADDR_SAVED_reg[0]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/RF_ADDR_SAVED_reg[0]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U73/Y (OAI22X1M)                               0.09       0.44 f
+  SYS_CTRL/RF_ADDR_SAVED_reg[0]/D (DFFRX1M)               0.00       0.44 f
+  data arrival time                                                  0.44
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/RF_ADDR_SAVED_reg[0]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.35
+
+
+  Startpoint: DATA_SYNCHRONIZER/sync_reg_reg[0]/CK
+              (internal path startpoint clocked by REF_CLK)
+  Endpoint: DATA_SYNCHRONIZER/sync_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.00       0.00 r
+  DATA_SYNCHRONIZER/sync_reg_reg[0]/CK (DFFRQX2M)         0.00       0.00 r
+  DATA_SYNCHRONIZER/sync_reg_reg[0]/Q (DFFRQX2M)          0.46       0.46 f
+  DATA_SYNCHRONIZER/sync_reg_reg[1]/D (DFFRQX1M)          0.00       0.46 f
+  data arrival time                                                  0.46
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  DATA_SYNCHRONIZER/sync_reg_reg[1]/CK (DFFRQX1M)         0.00       0.10 r
+  library hold time                                       0.00       0.10
+  data required time                                                 0.10
+  --------------------------------------------------------------------------
+  data required time                                                 0.10
+  data arrival time                                                 -0.46
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.36
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[15]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[15]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[15]/CK (DFFRX1M)             0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[15]/QN (DFFRX1M)             0.35       0.35 r
+  SYS_CTRL/U94/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[15]/D (DFFRX1M)              0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[15]/CK (DFFRX1M)             0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[14]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[14]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[14]/CK (DFFRX1M)             0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[14]/QN (DFFRX1M)             0.35       0.35 r
+  SYS_CTRL/U93/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[14]/D (DFFRX1M)              0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[14]/CK (DFFRX1M)             0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[13]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[13]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[13]/CK (DFFRX1M)             0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[13]/QN (DFFRX1M)             0.35       0.35 r
+  SYS_CTRL/U92/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[13]/D (DFFRX1M)              0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[13]/CK (DFFRX1M)             0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[12]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[12]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[12]/CK (DFFRX1M)             0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[12]/QN (DFFRX1M)             0.35       0.35 r
+  SYS_CTRL/U91/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[12]/D (DFFRX1M)              0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[12]/CK (DFFRX1M)             0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[11]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[11]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[11]/CK (DFFRX1M)             0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[11]/QN (DFFRX1M)             0.35       0.35 r
+  SYS_CTRL/U90/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[11]/D (DFFRX1M)              0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[11]/CK (DFFRX1M)             0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[10]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[10]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[10]/CK (DFFRX1M)             0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[10]/QN (DFFRX1M)             0.35       0.35 r
+  SYS_CTRL/U89/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[10]/D (DFFRX1M)              0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[10]/CK (DFFRX1M)             0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[9]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[9]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[9]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[9]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U88/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[9]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[9]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[8]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[8]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[8]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[8]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U87/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[8]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[8]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/RF_ADDR_SAVED_reg[2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/RF_ADDR_SAVED_reg[2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/RF_ADDR_SAVED_reg[2]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/RF_ADDR_SAVED_reg[2]/QN (DFFRX1M)              0.36       0.36 r
+  SYS_CTRL/U75/Y (OAI22X1M)                               0.09       0.45 f
+  SYS_CTRL/RF_ADDR_SAVED_reg[2]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/RF_ADDR_SAVED_reg[2]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[7]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[7]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U86/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[7]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[7]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[6]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[6]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U85/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[6]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[6]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[5]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[5]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U84/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[5]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[5]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[4]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[4]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U83/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[4]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[4]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[3]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[3]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U82/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[3]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[3]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[2]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[2]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U81/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[2]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[2]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[1]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[1]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U80/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[1]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[1]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/ALU_OUT_SAVED_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/ALU_OUT_SAVED_reg[0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/ALU_OUT_SAVED_reg[0]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/ALU_OUT_SAVED_reg[0]/QN (DFFRX1M)              0.35       0.35 r
+  SYS_CTRL/U79/Y (OAI2BB2X1M)                             0.10       0.45 f
+  SYS_CTRL/ALU_OUT_SAVED_reg[0]/D (DFFRX1M)               0.00       0.45 f
+  data arrival time                                                  0.45
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/ALU_OUT_SAVED_reg[0]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: RST_SYNC_1/sync_chain_reg[0]/CK
+              (internal path startpoint clocked by REF_CLK)
+  Endpoint: RST_SYNC_1/sync_chain_reg[1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.00       0.00 r
+  RST_SYNC_1/sync_chain_reg[0]/CK (DFFRQX2M)              0.00       0.00 r
+  RST_SYNC_1/sync_chain_reg[0]/Q (DFFRQX2M)               0.46       0.46 f
+  RST_SYNC_1/sync_chain_reg[1]/D (DFFRQX4M)               0.00       0.46 f
+  data arrival time                                                  0.46
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  RST_SYNC_1/sync_chain_reg[1]/CK (DFFRQX4M)              0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.46
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.37
+
+
+  Startpoint: SYS_CTRL/RF_ADDR_SAVED_reg[3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/RF_ADDR_SAVED_reg[3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SYS_CTRL/RF_ADDR_SAVED_reg[3]/CK (DFFRX1M)              0.00       0.00 r
+  SYS_CTRL/RF_ADDR_SAVED_reg[3]/QN (DFFRX1M)              0.39       0.39 r
+  SYS_CTRL/U76/Y (OAI22X1M)                               0.10       0.49 f
+  SYS_CTRL/RF_ADDR_SAVED_reg[3]/D (DFFRX1M)               0.00       0.49 f
+  data arrival time                                                  0.49
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/RF_ADDR_SAVED_reg[3]/CK (DFFRX1M)              0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.49
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.40
+
+
+  Startpoint: DATA_SYNCHRONIZER/sync_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: DATA_SYNCHRONIZER/enable_flop_reg
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DATA_SYNCHRONIZER/sync_reg_reg[1]/CK (DFFRQX1M)         0.00       0.00 r
+  DATA_SYNCHRONIZER/sync_reg_reg[1]/Q (DFFRQX1M)          0.51       0.51 f
+  DATA_SYNCHRONIZER/enable_flop_reg/D (DFFRQX1M)          0.00       0.51 f
+  data arrival time                                                  0.51
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  DATA_SYNCHRONIZER/enable_flop_reg/CK (DFFRQX1M)         0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.51
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.42
+
+
+  Startpoint: DATA_SYNCHRONIZER/enable_pulse_d_reg
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: SYS_CTRL/current_state_reg[1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DATA_SYNCHRONIZER/enable_pulse_d_reg/CK (DFFRQX1M)      0.00       0.00 r
+  DATA_SYNCHRONIZER/enable_pulse_d_reg/Q (DFFRQX1M)       0.54       0.54 r
+  DATA_SYNCHRONIZER/enable_pulse_d (DATA_SYNC)            0.00       0.54 r
+  SYS_CTRL/RX_P_Data_VALID (SYS_CTRL)                     0.00       0.54 r
+  SYS_CTRL/U60/Y (OAI211X2M)                              0.12       0.66 f
+  SYS_CTRL/current_state_reg[1]/D (DFFRQX1M)              0.00       0.66 f
+  data arrival time                                                  0.66
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  SYS_CTRL/current_state_reg[1]/CK (DFFRQX1M)             0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.66
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.56
+
+
+  Startpoint: REG_FILE/REG_reg[3][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[3][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[3][5]/CK (DFFSQX2M)                    0.00       0.00 r
+  REG_FILE/REG_reg[3][5]/Q (DFFSQX2M)                     0.47       0.47 r
+  REG_FILE/U115/Y (OAI2BB2X1M)                            0.16       0.63 r
+  REG_FILE/REG_reg[3][5]/D (DFFSQX2M)                     0.00       0.63 r
+  data arrival time                                                  0.63
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[3][5]/CK (DFFSQX2M)                    0.00       0.10 r
+  library hold time                                      -0.05       0.05
+  data required time                                                 0.05
+  --------------------------------------------------------------------------
+  data required time                                                 0.05
+  data arrival time                                                 -0.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.58
+
+
+  Startpoint: REG_FILE/RdData_Valid_reg
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/RdData_Valid_reg
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/RdData_Valid_reg/CK (DFFRQX2M)                 0.00       0.00 r
+  REG_FILE/RdData_Valid_reg/Q (DFFRQX2M)                  0.50       0.50 f
+  REG_FILE/U230/Y (OR2X2M)                                0.16       0.66 f
+  REG_FILE/RdData_Valid_reg/D (DFFRQX2M)                  0.00       0.66 f
+  data arrival time                                                  0.66
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/RdData_Valid_reg/CK (DFFRQX2M)                 0.00       0.10 r
+  library hold time                                      -0.02       0.08
+  data required time                                                 0.08
+  --------------------------------------------------------------------------
+  data required time                                                 0.08
+  data arrival time                                                 -0.66
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.58
+
+
+  Startpoint: DATA_SYNCHRONIZER/enable_flop_reg
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: DATA_SYNCHRONIZER/enable_pulse_d_reg
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DATA_SYNCHRONIZER/enable_flop_reg/CK (DFFRQX1M)         0.00       0.00 r
+  DATA_SYNCHRONIZER/enable_flop_reg/Q (DFFRQX1M)          0.42       0.42 r
+  DATA_SYNCHRONIZER/U4/Y (NAND2BX2M)                      0.17       0.59 r
+  DATA_SYNCHRONIZER/U3/Y (INVX2M)                         0.10       0.69 f
+  DATA_SYNCHRONIZER/enable_pulse_d_reg/D (DFFRQX1M)       0.00       0.69 f
+  data arrival time                                                  0.69
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  DATA_SYNCHRONIZER/enable_pulse_d_reg/CK (DFFRQX1M)      0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.69
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.59
+
+
+  Startpoint: REG_FILE/REG_reg[2][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[2][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[2][0]/CK (DFFSQX2M)                    0.00       0.00 r
+  REG_FILE/REG_reg[2][0]/Q (DFFSQX2M)                     0.50       0.50 r
+  REG_FILE/U113/Y (OAI2BB2X1M)                            0.17       0.66 r
+  REG_FILE/REG_reg[2][0]/D (DFFSQX2M)                     0.00       0.66 r
+  data arrival time                                                  0.66
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[2][0]/CK (DFFSQX2M)                    0.00       0.10 r
+  library hold time                                      -0.05       0.05
+  data required time                                                 0.05
+  --------------------------------------------------------------------------
+  data required time                                                 0.05
+  data arrival time                                                 -0.66
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.61
+
+
+  Startpoint: REG_FILE/REG_reg[6][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[6][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[6][7]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[6][7]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U96/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[6][7]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[6][7]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[6][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[6][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[6][6]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[6][6]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U95/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[6][6]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[6][6]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[6][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[6][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[6][5]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[6][5]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U94/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[6][5]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[6][5]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[6][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[6][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[6][4]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[6][4]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U93/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[6][4]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[6][4]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[6][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[6][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[6][3]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[6][3]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U92/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[6][3]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[6][3]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[6][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[6][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[6][2]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[6][2]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U91/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[6][2]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[6][2]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[6][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[6][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[6][1]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[6][1]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U90/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[6][1]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[6][1]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[6][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[6][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[6][0]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[6][0]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U89/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[6][0]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[6][0]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[10][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[10][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[10][7]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[10][7]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U188/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[10][7]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[10][7]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[10][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[10][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[10][6]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[10][6]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U187/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[10][6]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[10][6]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[10][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[10][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[10][5]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[10][5]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U186/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[10][5]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[10][5]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[10][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[10][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[10][4]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[10][4]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U185/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[10][4]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[10][4]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[10][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[10][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[10][3]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[10][3]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U184/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[10][3]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[10][3]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[10][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[10][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[10][2]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[10][2]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U183/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[10][2]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[10][2]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[10][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[10][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[10][1]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[10][1]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U182/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[10][1]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[10][1]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[10][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[10][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[10][0]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[10][0]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U181/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[10][0]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[10][0]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[14][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[14][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[14][7]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[14][7]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U220/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[14][7]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[14][7]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[14][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[14][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[14][6]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[14][6]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U219/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[14][6]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[14][6]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[14][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[14][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[14][5]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[14][5]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U218/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[14][5]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[14][5]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[14][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[14][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[14][4]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[14][4]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U217/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[14][4]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[14][4]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[14][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[14][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[14][3]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[14][3]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U216/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[14][3]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[14][3]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[14][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[14][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[14][2]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[14][2]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U215/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[14][2]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[14][2]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[14][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[14][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[14][1]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[14][1]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U214/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[14][1]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[14][1]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[14][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[14][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[14][0]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[14][0]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U213/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[14][0]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[14][0]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[5][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[5][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[5][7]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[5][7]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U88/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[5][7]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[5][7]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[5][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[5][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[5][6]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[5][6]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U87/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[5][6]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[5][6]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[5][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[5][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[5][5]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[5][5]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U86/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[5][5]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[5][5]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[5][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[5][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[5][4]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[5][4]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U85/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[5][4]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[5][4]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[5][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[5][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[5][3]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[5][3]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U84/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[5][3]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[5][3]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[5][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[5][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[5][2]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[5][2]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U83/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[5][2]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[5][2]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[5][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[5][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[5][1]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[5][1]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U82/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[5][1]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[5][1]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[5][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[5][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[5][0]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[5][0]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U81/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[5][0]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[5][0]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[9][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[9][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[9][7]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[9][7]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U180/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[9][7]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[9][7]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[9][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[9][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[9][6]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[9][6]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U179/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[9][6]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[9][6]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[9][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[9][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[9][5]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[9][5]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U178/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[9][5]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[9][5]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[9][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[9][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[9][4]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[9][4]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U177/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[9][4]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[9][4]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[9][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[9][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[9][3]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[9][3]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U176/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[9][3]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[9][3]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[9][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[9][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[9][2]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[9][2]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U175/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[9][2]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[9][2]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[9][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[9][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[9][1]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[9][1]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U174/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[9][1]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[9][1]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[9][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[9][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[9][0]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[9][0]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U173/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[9][0]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[9][0]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[13][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[13][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[13][7]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[13][7]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U212/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[13][7]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[13][7]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[13][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[13][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[13][6]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[13][6]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U211/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[13][6]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[13][6]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[13][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[13][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[13][5]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[13][5]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U210/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[13][5]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[13][5]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[13][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[13][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[13][4]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[13][4]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U209/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[13][4]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[13][4]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[13][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[13][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[13][3]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[13][3]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U208/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[13][3]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[13][3]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[13][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[13][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[13][2]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[13][2]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U207/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[13][2]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[13][2]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[13][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[13][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[13][1]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[13][1]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U206/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[13][1]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[13][1]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[13][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[13][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[13][0]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[13][0]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U205/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[13][0]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[13][0]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[7][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[7][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[7][7]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[7][7]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U104/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[7][7]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[7][7]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[7][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[7][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[7][6]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[7][6]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U103/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[7][6]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[7][6]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[7][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[7][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[7][5]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[7][5]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U102/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[7][5]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[7][5]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[7][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[7][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[7][4]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[7][4]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U101/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[7][4]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[7][4]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[7][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[7][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[7][3]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[7][3]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U100/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[7][3]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[7][3]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[7][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[7][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[7][2]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[7][2]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U99/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[7][2]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[7][2]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[7][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[7][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[7][1]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[7][1]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U98/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[7][1]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[7][1]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[7][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[7][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[7][0]/CK (DFFRQX1M)                    0.00       0.00 r
+  REG_FILE/REG_reg[7][0]/Q (DFFRQX1M)                     0.51       0.51 f
+  REG_FILE/U97/Y (OAI2BB2X1M)                             0.21       0.72 f
+  REG_FILE/REG_reg[7][0]/D (DFFRQX1M)                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[7][0]/CK (DFFRQX1M)                    0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[11][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[11][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[11][7]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[11][7]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U196/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[11][7]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[11][7]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[11][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[11][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[11][6]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[11][6]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U195/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[11][6]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[11][6]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[11][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[11][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[11][5]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[11][5]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U194/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[11][5]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[11][5]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[11][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[11][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[11][4]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[11][4]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U193/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[11][4]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[11][4]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[11][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[11][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[11][3]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[11][3]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U192/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[11][3]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[11][3]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[11][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[11][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[11][2]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[11][2]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U191/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[11][2]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[11][2]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[11][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[11][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[11][1]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[11][1]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U190/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[11][1]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[11][1]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[11][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[11][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[11][0]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[11][0]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U189/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[11][0]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[11][0]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[15][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[15][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[15][7]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[15][7]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U228/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[15][7]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[15][7]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[15][6]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[15][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[15][6]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[15][6]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U227/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[15][6]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[15][6]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[15][5]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[15][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[15][5]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[15][5]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U226/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[15][5]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[15][5]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[15][4]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[15][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[15][4]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[15][4]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U225/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[15][4]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[15][4]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[15][3]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[15][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[15][3]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[15][3]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U224/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[15][3]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[15][3]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[15][2]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[15][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[15][2]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[15][2]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U223/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[15][2]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[15][2]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[15][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[15][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[15][1]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[15][1]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U222/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[15][1]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[15][1]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: REG_FILE/REG_reg[15][0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: REG_FILE/REG_reg[15][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  REG_FILE/REG_reg[15][0]/CK (DFFRQX1M)                   0.00       0.00 r
+  REG_FILE/REG_reg[15][0]/Q (DFFRQX1M)                    0.51       0.51 f
+  REG_FILE/U221/Y (OAI2BB2X1M)                            0.21       0.72 f
+  REG_FILE/REG_reg[15][0]/D (DFFRQX1M)                    0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  REG_FILE/REG_reg[15][0]/CK (DFFRQX1M)                   0.00       0.10 r
+  library hold time                                      -0.01       0.09
+  data required time                                                 0.09
+  --------------------------------------------------------------------------
+  data required time                                                 0.09
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+1

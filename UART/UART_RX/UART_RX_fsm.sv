@@ -19,18 +19,22 @@ module UART_RX_FSM (
 );
     
     //states def
-    typedef enum  {
+    /*typedef enum  {
         IDLE,
         START,
         DATA,
         PARITY,
         STOP,
         ERROR_CHECK
-    } state_e ;
+    } state_e ;*/
+    parameter  IDLE = 0;
+    parameter  START = 0;
+    parameter  DATA = 0;
+    parameter  PARITY = 0;
+    parameter  STOP = 0;
+    reg [2:0] current_state, next_state;
 
-    state_e current_state, next_state;
-
-    // state trasition
+    // state/ trasition
     always @( posedge clk or negedge rst ) begin
         if (!rst) begin
             current_state <= IDLE;

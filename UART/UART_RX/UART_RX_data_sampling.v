@@ -73,29 +73,30 @@ module data_sampling (
             case (Prescale)
                 8 :begin
                     if (sampled_ones == 2 || sampled_ones == 3) begin
-                        sampled_bit = 1;
+                        sampled_bit <= 1;
                     end
                     else begin
-                        sampled_bit = 0;
+                        sampled_bit <= 0;
                     end
                 end
                 16 : begin
                     if (sampled_ones == 2 || sampled_ones == 3) begin
-                        sampled_bit = 1;
+                        sampled_bit <= 1;
                     end
                     else begin
-                        sampled_bit = 0;
+                        sampled_bit <= 0;
                     end
                 end
                 32 : begin
                    if (sampled_ones == 2 || sampled_ones == 3 ) begin
-                        sampled_bit = 1;
+                        sampled_bit <= 1;
                     end
                     else begin
-                        sampled_bit = 0;
+                        sampled_bit <= 0;
                     end 
                 end
                 default:   begin
+			sampled_bit <= 0;
                 end
             endcase
         end

@@ -150,6 +150,17 @@ module SYS_CTRL (
 
     //output logic
     always @(*) begin
+        CLK_G_EN=0;
+        WrEn=0;
+        RdEn=0;
+        Address=0;
+        Wr_D=0;
+        ALU_FUN=0;
+        ALU_EN=0;
+        W_INC=0;
+        TX_P_DATA=0;
+        RF_ADDR_SAVE=0;
+        ALU_OUT_SAVE=0;
         case (current_state)
             IDLE:begin
                 CLK_G_EN=0;
@@ -173,6 +184,7 @@ module SYS_CTRL (
 			       begin
 			        RF_ADDR_SAVE = 1'b0 ; 			
                    end	
+                   
             end
             RF_WR_DATA:begin
                 if(RX_P_Data_VALID)

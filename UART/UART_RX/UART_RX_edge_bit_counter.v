@@ -12,6 +12,7 @@ module edge_bit_counter (
     always @(posedge clk) begin
         if (!rst) begin
             edge_count <= 0;
+	    bit_count <= 0;
         end
         else if (counter_enable) begin
             case (Prescale)
@@ -23,10 +24,10 @@ module edge_bit_counter (
                     end
                     else if (edge_count == 7) begin
                         edge_count <= 0;
-                        bit_count = bit_count +1;
+                        bit_count <= bit_count +1;
                     end                
                     else begin
-                        edge_count = edge_count + 1;
+                        edge_count <= edge_count + 1;
                     end
                 end 
                 else begin
@@ -36,10 +37,10 @@ module edge_bit_counter (
                     end
                     else if (edge_count == 7) begin
                         edge_count <= 0;
-                        bit_count = bit_count +1;
+                        bit_count <= bit_count +1;
                     end                
                     else begin
-                        edge_count = edge_count + 1;
+                        edge_count <= edge_count + 1;
                     end
                 end 
             end
@@ -52,10 +53,10 @@ module edge_bit_counter (
                 end
                 else if (edge_count == 15) begin
                     edge_count <= 0;
-                    bit_count = bit_count +1;
+                    bit_count <= bit_count +1;
                 end                
                 else begin
-                    edge_count = edge_count + 1;
+                    edge_count <= edge_count + 1;
                 end    
                 end
                 else begin
@@ -65,10 +66,10 @@ module edge_bit_counter (
                 end
                 else if (edge_count == 15) begin
                     edge_count <= 0;
-                    bit_count = bit_count +1;
+                    bit_count <= bit_count +1;
                 end                
                 else begin
-                    edge_count = edge_count + 1;
+                    edge_count <= edge_count + 1;
                 end 
                 end
                 
@@ -82,10 +83,10 @@ module edge_bit_counter (
                     end
                     else if (edge_count == 31) begin
                         edge_count <= 0;
-                        bit_count = bit_count +1;
+                        bit_count <= bit_count +1;
                     end                
                     else begin
-                        edge_count = edge_count + 1;
+                        edge_count <= edge_count + 1;
                     end    
                 end
                 else begin
@@ -95,17 +96,17 @@ module edge_bit_counter (
                     end
                     else if (edge_count == 31) begin
                         edge_count <= 0;
-                        bit_count = bit_count +1;
+                        bit_count <= bit_count +1;
                     end                
                     else begin
-                        edge_count = edge_count + 1;
+                        edge_count <= edge_count + 1;
                     end 
                 end
                 
             end
             default: begin
                 edge_count <= 0;
-                bit_count = 0;
+                bit_count <= 0;
             end
             
         endcase
